@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LynDoo Gallery - Showcase Your Creativity</title>
+    <meta name="description" content="A beautiful gallery showcasing creative works - photos, videos, and digital art">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Source+Serif+4:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">
+                    <i class="fas fa-camera-retro"></i>
+                    LynDoo Gallery
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#gallery" class="nav-link">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Creative Showcase</h1>
+            <p class="hero-subtitle">Discover stunning photography, captivating videos, and digital artworks</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">
+                    Explore Gallery
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-play"></i>
+                    Watch Demo
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-grid">
+                <div class="hero-card" style="--delay: 0s">
+                    <i class="fas fa-camera"></i>
+                    <span>Photography</span>
+                </div>
+                <div class="hero-card" style="--delay: 0.2s">
+                    <i class="fas fa-video"></i>
+                    <span>Videos</span>
+                </div>
+                <div class="hero-card" style="--delay: 0.4s">
+                    <i class="fas fa-palette"></i>
+                    <span>Digital Art</span>
+                </div>
+                <div class="hero-card" style="--delay: 0.6s">
+                    <i class="fas fa-images"></i>
+                    <span>Collections</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Gallery</h2>
+                <p class="section-subtitle">Browse through our curated collection of creative works</p>
+            </div>
+
+            <!-- Gallery Filters -->
+            <div class="gallery-filters">
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="photography">Photography</button>
+                    <button class="filter-btn" data-filter="video">Videos</button>
+                    <button class="filter-btn" data-filter="digital-art">Digital Art</button>
+                    <button class="filter-btn" data-filter="nature">Nature</button>
+                    <button class="filter-btn" data-filter="portrait">Portraits</button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="gallery-search" placeholder="Search gallery...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Sample Gallery Items -->
+                <div class="gallery-item" data-category="photography nature">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Mountain Landscape" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Mountain Landscape</h3>
+                                <p>Breathtaking mountain vista</p>
+                                <span class="gallery-category">Nature</span>
+                            </div>
+                            <button class="gallery-btn" onclick="openModal(this)" data-title="Mountain Landscape" data-description="A stunning mountain landscape captured during golden hour" data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="video">
+                    <div class="gallery-card video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=300&fit=crop" alt="Ocean Waves Video" loading="lazy">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Ocean Waves</h3>
+                                <p>Relaxing ocean soundscape</p>
+                                <span class="gallery-category">Video</span>
+                            </div>
+                            <button class="gallery-btn" onclick="openVideoModal(this)" data-title="Ocean Waves" data-description="Calming ocean waves with natural sound">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="portrait photography">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=300&fit=crop" alt="Portrait Photography" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Portrait Study</h3>
+                                <p>Professional portrait photography</p>
+                                <span class="gallery-category">Portrait</span>
+                            </div>
+                            <button class="gallery-btn" onclick="openModal(this)" data-title="Portrait Study" data-description="A professional portrait showcasing natural lighting techniques" data-src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&h=600&fit=crop">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="digital-art">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=300&fit=crop" alt="Digital Art" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Abstract Digital</h3>
+                                <p>Modern digital artwork</p>
+                                <span class="gallery-category">Digital Art</span>
+                            </div>
+                            <button class="gallery-btn" onclick="openModal(this)" data-title="Abstract Digital" data-description="Contemporary digital art with vibrant colors and geometric patterns" data-src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=600&fit=crop">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="nature photography">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop" alt="Forest Path" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Forest Path</h3>
+                                <p>Mystical forest pathway</p>
+                                <span class="gallery-category">Nature</span>
+                            </div>
+                            <button class="gallery-btn" onclick="openModal(this)" data-title="Forest Path" data-description="A mysterious forest path leading into the unknown depths of nature" data-src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="photography">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop" alt="Urban Architecture" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Urban Lines</h3>
+                                <p>Modern architecture study</p>
+                                <span class="gallery-category">Architecture</span>
+                            </div>
+                            <button class="gallery-btn" onclick="openModal(this)" data-title="Urban Lines" data-description="Contemporary architecture showcasing clean lines and modern design" data-src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="gallery-actions">
+                <button class="btn btn-secondary" id="load-more">
+                    Load More
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About LynDoo Gallery</h2>
+                    <p class="about-description">
+                        We curate and showcase the finest creative works from talented artists, photographers, and videographers. 
+                        Our platform serves as a digital gallery where creativity meets appreciation, offering visitors an 
+                        immersive experience to discover and explore various forms of visual art.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-eye"></i>
+                            <h3>Visual Excellence</h3>
+                            <p>Carefully curated high-quality content</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h3>Community Driven</h3>
+                            <p>Supporting artists and creators worldwide</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <h3>Passion for Art</h3>
+                            <p>Celebrating creativity in all its forms</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>500+</h3>
+                            <p>Artworks</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>50+</h3>
+                            <p>Artists</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>10K+</h3>
+                            <p>Visitors</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>25+</h3>
+                            <p>Categories</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have questions or want to showcase your work? We'd love to hear from you.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>hello@lyndoo.gallery</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Creative District, Art City</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LynDoo Gallery</h3>
+                    <p>Showcasing creativity through visual storytelling</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Photography</a></li>
+                        <li><a href="#">Videos</a></li>
+                        <li><a href="#">Digital Art</a></li>
+                        <li><a href="#">Nature</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LynDoo Gallery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="">
+                <div id="modal-video" class="modal-video-container"></div>
+                <div class="modal-info">
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
