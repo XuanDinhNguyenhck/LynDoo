@@ -1,4 +1,4 @@
-# LynDoo Gallery
+# LynDoo shop
 
 A modern, responsive gallery website showcasing creative works including photography, videos, and digital art. Built with a beautiful theme system using OKLCH color space for consistent and accessible design.
 

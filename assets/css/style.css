@@ -206,6 +206,16 @@ p {
   padding: 0 1rem;
 }
 
+/* when header should show only the centered logo */
+.nav-container.nav-center {
+  justify-content: center;
+}
+
+.nav-container.nav-center .nav-menu,
+.nav-container.nav-center .nav-actions {
+  display: none;
+}
+
 .nav-logo {
   display: flex;
   align-items: center;

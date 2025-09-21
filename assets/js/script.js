@@ -510,7 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add smooth scroll behavior for better UX
     document.documentElement.style.scrollBehavior = 'smooth';
 
-    console.log('LynDoo Gallery initialized successfully!');
+    console.log('LynDoo shop initialized successfully!');
 });
 
 // Service Worker Registration (for PWA capabilities)
