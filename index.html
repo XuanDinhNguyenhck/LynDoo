@@ -13,6 +13,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dock.css">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -411,6 +412,32 @@
     </div>
 
     <!-- JavaScript -->
+    <!-- App Dock -->
+    <div class="dock-outer" id="app-dock">
+    <div class="dock-panel" id="dock-panel" role="toolbar" aria-label="Application dock" style="height:50px">
+            <div class="dock-item" data-label="Home" data-action="home">
+                <div class="dock-icon"><i class="fas fa-home"></i></div>
+                <div class="dock-label">Home</div>
+            </div>
+            <div class="dock-item" data-label="Archive" data-action="archive">
+                <div class="dock-icon"><i class="fas fa-archive"></i></div>
+                <div class="dock-label">Archive</div>
+            </div>
+            <div class="dock-item" data-label="Profile" data-action="profile">
+                <div class="dock-icon"><i class="fas fa-user"></i></div>
+                <div class="dock-label">Profile</div>
+            </div>
+            <div class="dock-item" data-label="Settings" data-action="settings">
+                <div class="dock-icon"><i class="fas fa-cog"></i></div>
+                <div class="dock-label">Settings</div>
+            </div>
+            <div class="dock-item" data-label="Theme" data-action="toggle-theme" role="button" aria-pressed="false" tabindex="0">
+                <div class="dock-icon"><i id="dock-theme-icon" class="fas fa-moon" aria-hidden="true"></i></div>
+                <div class="dock-label">Theme</div>
+            </div>
+        </div>
+    </div>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/dock.js"></script>
 </body>
 </html>

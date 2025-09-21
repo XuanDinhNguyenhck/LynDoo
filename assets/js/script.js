@@ -52,6 +52,17 @@ class ThemeManager {
         } else {
             icon.className = 'fas fa-moon';
         }
+        // Also update dock icon if present
+        const dockIcon = document.getElementById('dock-theme-icon');
+        if (dockIcon) {
+            if (this.currentTheme === 'dark') {
+                dockIcon.className = 'fas fa-sun';
+                dockIcon.parentElement?.parentElement?.setAttribute('aria-pressed', 'true');
+            } else {
+                dockIcon.className = 'fas fa-moon';
+                dockIcon.parentElement?.parentElement?.setAttribute('aria-pressed', 'false');
+            }
+        }
     }
 }
 
